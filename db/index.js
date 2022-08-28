@@ -1,4 +1,5 @@
 const { dburl } = require('../config');
+const mongoose = require("mongoose");
 
 const connect = (databaseUrl = dburl) => {
     return mongoose

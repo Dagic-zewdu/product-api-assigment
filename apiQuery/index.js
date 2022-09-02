@@ -6,7 +6,7 @@ class APIFeatures {
     }
     /**
      * filters the schema based on query provided
-     * @returns promise fron find functions
+     * @returns promise from find functions
      */
     filter() {
         const queryObj = { ...this.queryString };
@@ -29,7 +29,10 @@ class APIFeatures {
 
         return this;
     }
-
+    /**
+     * sorts schema based onthe quer of sort
+     * @returns sorted schema from query
+     */
     sort() {
         if (this.queryString.sort) {
             const sortBy = this.queryString.sort.split(',').join(' ');

@@ -46,7 +46,17 @@
    }
    ```
 
+  * You can also sort products. For instance you can sort through in views
 
+   `/api/products?sort="-views"` query to get the latest viewed items will return json
+   
+  ```js
+   {
+    "total": 99999, // All products registered length
+    "count": 1000, // length of products that in the products array no mire than 1000 
+    "products": [{}, {}, ...]// Products info
+   }
+   ```
 ## Author
 
 👤 **Dagic Zewdu**

@@ -4,11 +4,8 @@ class APIFeatures {
         this.queryString = queryString;
         this.originalQuery = query
     }
-    /**
-     * filters the schema based on query provided
-     * @returns promise from find functions
-     */
-    filter() {
+    filterParams() {
+
         const queryObj = { ...this.queryString };
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
@@ -25,8 +22,14 @@ class APIFeatures {
             }
             else priceRange = { price: { $gte: min } }
         }
-        this.query = this.query.find({ ...JSON.parse(queryStr), ...priceRange });
-
+        return ({ ...JSON.parse(queryStr), ...priceRange });
+    }
+    /**
+     * filters the schema based on query provided
+     * @returns promise from find functions
+     */
+    filter() {
+        this.query = this.query.find(this.filterParams());
         return this;
     }
     /**
@@ -66,7 +69,7 @@ class APIFeatures {
     }
     // counts the query results
     count() {
-        let count = this.query.countDocuments({}).exec();
+        let count = this.query.countDocuments(this.filterParams()).exec();
         return count
     }
 }

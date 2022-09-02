@@ -47,7 +47,7 @@
    ```
 
 
-## Authors
+## Author
 
 👤 **Dagic Zewdu**
 

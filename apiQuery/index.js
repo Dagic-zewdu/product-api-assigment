@@ -64,10 +64,12 @@ class APIFeatures {
 
         return this;
     }
+    // counts the query results
     count() {
         let count = this.query.countDocuments({}).exec();
         return count
     }
+    //counts all total products
     total() {
         let total = this.originalQuery.countDocuments({}).exec()
         return total

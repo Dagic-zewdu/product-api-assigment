@@ -4,7 +4,10 @@ class APIFeatures {
         this.queryString = queryString;
         this.originalQuery = query
     }
-
+    /**
+     * filters the schema based on query provided
+     * @returns promise fron find functions
+     */
     filter() {
         const queryObj = { ...this.queryString };
         const excludedFields = ['page', 'sort', 'limit', 'fields'];

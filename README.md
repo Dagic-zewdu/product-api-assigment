@@ -26,13 +26,13 @@
    }
    ```
 
-   `/api/products?category=325434343` will return a Json
+   `/api/products?category="325434343"` will return a Json
  
  ```js
    {
     "total": 2000, // All products with the provided category id 
     "count": 1000, // length of products that in the products array no more than 1000  
-    "products": [{}, {}, ...]// Products info
+    "products": [{}, {}, ...]// Products with given category id
    }
    ```
    * With the page and limit fields on the query, you can add pagination.For instance look at this query
@@ -42,6 +42,23 @@
    {
     "total": 9999, // All products length 
     "count": 20, // length of products that in the products array no more than 20 because it is specified on the limit  
-    "products": [{}, {}, ...]// Products info
+    "products": [{}, {}, ...]// Products from 1-20
    }
    ```
+
+
+## Authors
+
+👤 **Dagic Zewdu**
+
+- GitHub: [@Dagic-zewdu](https://github.com/Dagic-zewdu)
+- Twitter: [@dagic4](https://twitter.com/dagic4)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dagic-zewdu/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!

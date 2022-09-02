@@ -13,8 +13,8 @@ class APIFeatures {
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
 
-        let queryStr = JSON.stringify(queryObj);
-        queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
+        let queryStr = JSON.stringify(queryObj);// change to string
+        queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);// stringify object
         let priceRange = {}
         // if maximum and minimum exists
         if (this.queryString.minPrice || this.queryString.maxPrice) {
@@ -68,11 +68,6 @@ class APIFeatures {
     count() {
         let count = this.query.countDocuments({}).exec();
         return count
-    }
-    //counts all total products
-    total() {
-        let total = this.originalQuery.countDocuments({}).exec()
-        return total
     }
 }
 module.exports = APIFeatures;

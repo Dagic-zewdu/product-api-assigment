@@ -54,7 +54,7 @@
    {
     "total": 99999, // All products registered length
     "count": 1000, // length of products that in the products array no mire than 1000 
-    "products": [{}, {}, ...]// Products info
+    "products": [{}, {}, ...]// Products info with object
    }
    ```
 ## Author

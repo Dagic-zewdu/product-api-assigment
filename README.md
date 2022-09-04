@@ -16,7 +16,7 @@
    ```
    * To filter products, use query parameters.  for example, include maximum and minimum price in the query filter products.
 
-   `/api/products?maxPrice=200&minPrice=3000` will return a Json
+   `/api/products?minPrice=200&maxPrice=3000` will return a Json
 
    ```js
    {
